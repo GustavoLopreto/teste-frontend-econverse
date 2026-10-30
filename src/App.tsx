@@ -1,7 +1,9 @@
+import styles from './App.module.scss'
+
 function App() {
   return (
     <main>
-      <h1>Teste Econverse</h1>
+      <h1 className={styles.title}>Teste Econverse</h1>
     </main>
   )
 }
