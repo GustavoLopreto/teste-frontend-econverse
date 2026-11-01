@@ -1,3 +1,30 @@
-// Valores provisorios: serao substituidos pelos tokens do Figma na Etapa 2.
-$color-text: #333;
-$font-family-base: system-ui, sans-serif;
+// Tokens extraidos do Figma.
+$color-primary: #3442b5;
+$color-secondary: #271c47;
+$color-accent: #f7ca11;
+$color-text: #3f3f40;
+$color-text-muted: #4e4e4e;
+$color-text-soft: #808080;
+$color-gray: #9f9f9f;
+$color-tab: #3b3b3b;
+$color-tab-border: #bdbdbd;
+$color-highlight: #3c28bc;
+$color-footer-text: rgba(34, 34, 34, 0.71);
+$color-border: #e7e7e7;
+$color-surface: #f4f4f4;
+$color-search: #f6f5f2;
+$color-white: #fff;
+
+$font-family-base: 'Poppins', sans-serif;
+$font-family-heading: 'Outfit', sans-serif;
+$font-family-body: 'Work Sans', sans-serif;
+
+$container-width: 1280px;
+$page-gutter: 24px;
+$shadow-tile: 0 4px 11px rgba(0, 0, 0, 0.13);
+$shadow-nav: 0 4px 12px rgba(0, 0, 0, 0.08);
+$shadow-arrow: 0 2px 6px rgba(0, 0, 0, 0.2);
+$shadow-card: 0 4px 11px rgba(0, 0, 0, 0.13);
+
+$breakpoint-desktop: 1100px;
+$breakpoint-tablet: 760px;

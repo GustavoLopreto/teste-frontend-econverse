@@ -1,0 +1,435 @@
+@use '../styles/variables' as *;
+@use '../styles/mixins' as *;
+
+.page {
+  @include container;
+  padding-block: 32px 72px;
+}
+
+.title {
+  margin: 0 0 8px;
+  color: $color-primary;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 40px;
+}
+
+.subtitle {
+  margin: 0 0 24px;
+  color: $color-text-muted;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.sectionTitle {
+  margin: 0 0 16px;
+  color: $color-secondary;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 24px;
+  color: $color-text-muted;
+  font-size: 14px;
+}
+
+.sort {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  select {
+    height: 38px;
+    padding: 0 12px;
+    border: 1px solid $color-border;
+    border-radius: 6px;
+    background: $color-white;
+    color: $color-text;
+    font: inherit;
+  }
+}
+
+.chips {
+  @include reset-list;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 24px;
+
+  a {
+    display: block;
+    padding: 6px 16px;
+    border: 1px solid $color-border;
+    border-radius: 18px;
+    font-size: 14px;
+
+    &:hover {
+      border-color: $color-primary;
+      color: $color-primary;
+    }
+  }
+}
+
+.grid {
+  @include reset-list;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.empty {
+  padding: 48px 24px;
+  border-radius: 8px;
+  background: $color-surface;
+  text-align: center;
+
+  p {
+    margin: 0 0 16px;
+  }
+}
+
+.primaryButton,
+.secondaryButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 24px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.primaryButton {
+  border: 0;
+  background: $color-primary;
+  color: $color-white;
+
+  &:hover {
+    background: $color-secondary;
+  }
+}
+
+.secondaryButton {
+  border: 1px solid $color-primary;
+  background: $color-white;
+  color: $color-primary;
+}
+
+.linkButton {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: $color-primary;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.twoColumns {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 360px;
+  align-items: start;
+  gap: 32px;
+}
+
+.card {
+  padding: 24px;
+  border-radius: 8px;
+  background: $color-white;
+  box-shadow: $shadow-card;
+}
+
+.summaryRow {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin: 0 0 12px;
+  font-size: 14px;
+}
+
+.summaryTotal {
+  composes: summaryRow;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid $color-border;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.cartList {
+  @include reset-list;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.cartItem {
+  display: grid;
+  grid-template-columns: 96px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  border-radius: 8px;
+  background: $color-white;
+  box-shadow: $shadow-card;
+}
+
+.cartPhoto {
+  width: 96px;
+  height: 96px;
+  object-fit: contain;
+}
+
+.cartName {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+
+  &:hover {
+    color: $color-primary;
+  }
+}
+
+.cartControls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+}
+
+.cartPrice {
+  font-size: 16px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.fieldset {
+  min-width: 0;
+  margin: 0 0 24px;
+  padding: 24px;
+  border: 0;
+  border-radius: 8px;
+  box-shadow: $shadow-card;
+
+  legend {
+    float: left;
+    width: 100%;
+    margin-bottom: 16px;
+    padding: 0;
+    color: $color-secondary;
+    font-size: 20px;
+    font-weight: 600;
+  }
+}
+
+.fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  clear: both;
+  gap: 16px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 500;
+
+  input {
+    height: 44px;
+    padding: 0 14px;
+    border: 1px solid $color-border;
+    border-radius: 6px;
+    font-weight: 400;
+  }
+}
+
+.fieldWide {
+  composes: field;
+  grid-column: 1 / -1;
+}
+
+.options {
+  display: flex;
+  flex-wrap: wrap;
+  clear: both;
+  gap: 12px;
+  margin-bottom: 16px;
+
+  label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    border: 1px solid $color-border;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+
+    &:has(input:checked) {
+      border-color: $color-primary;
+      color: $color-primary;
+      font-weight: 600;
+    }
+  }
+}
+
+.notice {
+  margin: 0 0 16px;
+  padding: 12px 16px;
+  border-radius: 6px;
+  background: #fff9dc;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.productPage {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 48px;
+}
+
+.productPhoto {
+  width: 100%;
+  max-width: 460px;
+  height: auto;
+  margin-inline: auto;
+  object-fit: contain;
+}
+
+.brand {
+  color: $color-text-soft;
+  font-size: 14px;
+}
+
+.productName {
+  margin: 4px 0 16px;
+  color: $color-text;
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 38px;
+}
+
+.oldPrice {
+  margin: 0;
+  color: $color-text-soft;
+  font-size: 16px;
+}
+
+.bigPrice {
+  margin: 0 0 4px;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.muted {
+  margin: 0 0 16px;
+  color: $color-text-muted;
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.buyRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+}
+
+.prose {
+  max-width: 760px;
+  font-size: 16px;
+  line-height: 26px;
+
+  details {
+    margin-bottom: 12px;
+    padding: 12px 16px;
+    border-radius: 6px;
+    background: $color-surface;
+  }
+
+  summary {
+    font-weight: 600;
+    cursor: pointer;
+  }
+}
+
+.plans {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.perks {
+  margin: 16px 0;
+  padding-left: 20px;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.orderList {
+  @include reset-list;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.orderItems {
+  @include reset-list;
+  margin-bottom: 16px;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.pixCode {
+  overflow-wrap: anywhere;
+  padding: 12px;
+  border-radius: 6px;
+  background: $color-surface;
+  font-family: monospace;
+  font-size: 13px;
+}
+
+@include below($breakpoint-desktop) {
+  .twoColumns,
+  .productPage {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@include below($breakpoint-tablet) {
+  .fields {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .cartItem {
+    grid-template-columns: 64px minmax(0, 1fr);
+  }
+
+  .cartPhoto {
+    width: 64px;
+    height: 64px;
+  }
+
+  .cartPrice {
+    grid-column: 1 / -1;
+    text-align: right;
+  }
+}
