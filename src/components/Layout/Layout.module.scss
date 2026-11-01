@@ -1,0 +1,26 @@
+@use '../../styles/variables' as *;
+
+.toastRegion {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 10;
+  max-width: min(100% - 48px, 420px);
+}
+
+.toast {
+  margin: 0;
+  padding: 14px 20px;
+  border-radius: 8px;
+  background: $color-secondary;
+  box-shadow: $shadow-card;
+  color: $color-white;
+  font-size: 14px;
+  line-height: 20px;
+
+  a {
+    color: $color-accent;
+    font-weight: 600;
+    text-decoration: underline;
+  }
+}

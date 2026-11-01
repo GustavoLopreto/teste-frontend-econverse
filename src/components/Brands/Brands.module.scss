@@ -1,0 +1,37 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.brands {
+  @include container;
+  padding-top: 88px;
+}
+
+.title {
+  @include section-heading;
+}
+
+.list {
+  @include reset-list;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px 41px;
+  margin-top: 32px;
+  padding-right: 14px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 212px;
+  height: 212px;
+  border-radius: 50%;
+  background: $color-white;
+  box-shadow: $shadow-card;
+  transition: box-shadow 0.2s;
+
+  &:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.22);
+  }
+}

@@ -1,0 +1,168 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.header {
+  position: relative;
+  z-index: 2;
+  background: $color-white;
+}
+
+.inner {
+  @include container;
+}
+
+.benefits {
+  @include reset-list;
+  display: flex;
+  flex-wrap: wrap;
+  height: 31px;
+  padding: 7px 0 0 260px;
+  border-bottom: 1px solid $color-border;
+  color: $color-gray;
+  font-size: 12px;
+}
+
+.benefit {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  height: 18px;
+  line-height: 18px;
+
+  &:nth-child(1) {
+    width: 275px;
+  }
+
+  &:nth-child(2) {
+    width: 323px;
+  }
+
+  strong {
+    color: $color-highlight;
+    font-weight: 600;
+  }
+}
+
+.main {
+  display: flex;
+  align-items: center;
+  height: 73px;
+}
+
+.logo {
+  display: flex;
+  flex: none;
+  width: 325px;
+}
+
+.actions {
+  @include reset-list;
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  padding-right: 4px;
+
+  li + li {
+    margin-left: 34px;
+  }
+
+  li:nth-child(3) {
+    margin-left: 37.5px;
+  }
+
+  li:nth-child(4) {
+    margin-left: 36px;
+  }
+}
+
+.action {
+  position: relative;
+  display: flex;
+}
+
+.badge {
+  position: absolute;
+  top: -6px;
+  right: -8px;
+  min-width: 18px;
+  padding: 0 4px;
+  border-radius: 9px;
+  background: $color-primary;
+  color: $color-white;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 18px;
+  text-align: center;
+}
+
+.navPanel {
+  background: $color-white;
+  box-shadow: $shadow-nav;
+}
+
+.nav {
+  @include reset-list;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 40px;
+  padding: 0 71px 0 69px;
+}
+
+.navLink {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: $color-gray;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 18px;
+  text-transform: uppercase;
+
+  &:hover {
+    color: $color-primary;
+  }
+}
+
+.navLinkHighlighted {
+  color: $color-highlight;
+}
+
+@include below($breakpoint-desktop) {
+  .benefits {
+    justify-content: center;
+    height: auto;
+    gap: 8px 32px;
+    padding: 6px 0;
+    font-size: 12px;
+  }
+
+  .benefit:nth-child(n) {
+    width: auto;
+  }
+
+  .logo {
+    width: auto;
+    margin-right: 24px;
+  }
+
+  .nav {
+    justify-content: center;
+    gap: 8px 24px;
+    padding: 8px 0;
+  }
+}
+
+@include below($breakpoint-tablet) {
+  .main {
+    flex-wrap: wrap;
+    height: auto;
+    padding-block: 12px;
+    row-gap: 12px;
+  }
+
+  .actions li + li:nth-child(n) {
+    margin-left: 16px;
+  }
+}

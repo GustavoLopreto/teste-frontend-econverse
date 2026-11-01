@@ -1,0 +1,129 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.modal {
+  width: min(100% - 32px, 769px);
+  max-height: calc(100% - 32px);
+  padding: 0;
+  overflow: auto;
+  border: 0;
+  border-radius: 6px;
+  background: $color-white;
+  color: $color-text;
+
+  &::backdrop {
+    background: rgba(0, 0, 0, 0.5);
+  }
+}
+
+.content {
+  position: relative;
+  min-height: 299px;
+  padding: 60px 66px 24px 390px;
+}
+
+.close {
+  position: absolute;
+  top: 5px;
+  right: 19px;
+  display: flex;
+  padding: 4px;
+  border: 0;
+  background: none;
+  color: $color-text;
+}
+
+.photo {
+  position: absolute;
+  top: 36px;
+  left: 63px;
+  width: 232px;
+  height: 232px;
+  object-fit: contain;
+}
+
+.details {
+  flex: 1;
+  min-width: 0;
+}
+
+.name,
+.price {
+  margin: 0;
+  font-size: 20px;
+  letter-spacing: 0.05em;
+  line-height: 24px;
+}
+
+.name {
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.price {
+  margin-top: 11px;
+  font-weight: 600;
+}
+
+.description {
+  min-height: 30px;
+  margin: 27px 0 4px;
+  color: $color-gray;
+  font-family: $font-family-body;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  line-height: 15px;
+}
+
+.moreDetails {
+  color: $color-primary;
+  font-family: $font-family-body;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 26px;
+}
+
+.buy {
+  width: 188px;
+  height: 36px;
+  border: 0;
+  border-radius: 6px;
+  background: $color-accent;
+  color: $color-secondary;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+@include below($breakpoint-tablet) {
+  .content {
+    padding: 40px 20px 24px;
+  }
+
+  .photo {
+    position: static;
+    width: 196px;
+    height: 196px;
+    margin: 0 auto 16px;
+  }
+
+  .details {
+    width: 100%;
+  }
+
+  .actions {
+    flex-wrap: wrap;
+  }
+
+  .buy {
+    flex: 1;
+  }
+}
