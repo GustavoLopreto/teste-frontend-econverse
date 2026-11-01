@@ -1,1 +1,36 @@
-// Mixins compartilhados entre os componentes.
+@use './variables' as *;
+
+@mixin container {
+  width: min(100% - #{$page-gutter * 2}, $container-width);
+  margin-inline: auto;
+}
+
+@mixin section-heading {
+  margin: 0;
+  color: $color-primary;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 45px;
+  text-align: center;
+}
+
+@mixin reset-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@mixin visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+@mixin below($width) {
+  @media (max-width: $width) {
+    @content;
+  }
+}

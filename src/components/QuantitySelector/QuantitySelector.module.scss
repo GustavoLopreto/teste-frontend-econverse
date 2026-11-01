@@ -1,0 +1,30 @@
+@use '../../styles/variables' as *;
+
+.quantity {
+  display: inline-flex;
+  align-items: center;
+  height: 36px;
+  border: 1px solid $color-border;
+  border-radius: 4px;
+}
+
+.button {
+  display: flex;
+  padding: 7px;
+  border: 0;
+  background: none;
+  color: $color-secondary;
+
+  &:disabled {
+    color: $color-gray;
+    cursor: not-allowed;
+  }
+}
+
+.value {
+  width: 40px;
+  color: $color-secondary;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+}

@@ -1,0 +1,125 @@
+@use '../../styles/variables' as *;
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 24px 13.5px 16px;
+  border-radius: 8px;
+  background: $color-white;
+  box-shadow: $shadow-card;
+  transition: box-shadow 0.2s;
+
+  &:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.22);
+  }
+}
+
+.photo {
+  align-self: center;
+  width: 228px;
+  height: 228px;
+  object-fit: contain;
+}
+
+// A foto do JSON tem margens transparentes: a escala a deixa do tamanho que o layout mostra.
+.photoJson {
+  transform: translateY(8.5px) scale(1.145);
+}
+
+.discount {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: $color-accent;
+  color: $color-secondary;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 18px;
+}
+
+.favorite {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 1;
+}
+
+.name {
+  min-height: 46px;
+  margin: 18px 0 12px;
+  color: $color-text;
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 23px;
+}
+
+.open {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  text-align: left;
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 8px;
+  }
+}
+
+.oldPrice {
+  min-height: 24px;
+  margin: 0;
+  color: $color-text-soft;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.price {
+  margin: 2px 0 0;
+  color: $color-text;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 30px;
+}
+
+.installments {
+  margin: 2px 0 0;
+  color: $color-text;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.shipping {
+  min-height: 18px;
+  margin: 7px 0 12px;
+  color: $color-primary;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.buy {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 44px;
+  margin-top: auto;
+  border: 0;
+  border-radius: 4px;
+  background: $color-primary;
+  color: $color-white;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+
+  &:hover {
+    background: $color-secondary;
+  }
+}

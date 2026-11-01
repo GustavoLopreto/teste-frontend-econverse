@@ -1,0 +1,127 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.footer {
+  min-height: 282px;
+  padding-block: 42px;
+  background: $color-surface;
+}
+
+.inner {
+  @include container;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px 0;
+}
+
+.about {
+  flex: 0 0 445px;
+  min-height: 198px;
+  padding-top: 19.5px;
+  border-right: 1px solid $color-tab-border;
+}
+
+.logo {
+  display: flex;
+}
+
+.text {
+  max-width: 300px;
+  margin: 18px 0 28px;
+  color: $color-text;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 21px;
+}
+
+.socials {
+  @include reset-list;
+  display: flex;
+  align-items: flex-start;
+  margin-left: 0.5px;
+
+  li:nth-child(2) {
+    margin-left: 33px;
+  }
+
+  li:nth-child(3) {
+    margin-left: 32px;
+  }
+}
+
+.social {
+  display: flex;
+}
+
+.columns {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  padding: 42px 0 0 88px;
+}
+
+.column:nth-child(1) {
+  width: 221px;
+}
+
+.column:nth-child(2) {
+  width: 250px;
+}
+
+.columnTitle {
+  margin: 0 0 19px;
+  color: $color-footer-text;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 16px;
+}
+
+.links {
+  @include reset-list;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.link {
+  color: $color-footer-text;
+  font-family: $font-family-body;
+  display: block;
+  font-size: 14px;
+  line-height: 16px;
+
+  &:hover {
+    color: $color-primary;
+  }
+}
+
+.column:nth-child(3) .link {
+  font-family: $font-family-base;
+}
+
+.copyright {
+  margin: 0;
+  padding: 14px $page-gutter;
+  color: $color-text;
+  font-size: 13px;
+  font-weight: 300;
+  text-align: center;
+}
+
+@include below($breakpoint-desktop) {
+  .about {
+    flex-basis: 100%;
+    min-height: 0;
+    border-right: 0;
+  }
+
+  .columns {
+    padding: 0;
+    row-gap: 32px;
+  }
+
+  .column:nth-child(n) {
+    width: auto;
+    margin-right: 48px;
+  }
+}

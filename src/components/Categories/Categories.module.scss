@@ -1,0 +1,81 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.categories {
+  @include container;
+  padding-block: 38px 8px;
+}
+
+.list {
+  @include reset-list;
+  display: flex;
+  padding-left: 59px;
+
+  // Espacos medidos no Figma: o layout nao usa um espaco uniforme.
+  li:nth-child(1) a {
+    text-indent: -10px;
+  }
+
+  li:nth-child(2) {
+    margin-left: 42px;
+
+    a {
+      text-indent: -16px;
+    }
+  }
+
+  li:nth-child(3),
+  li:nth-child(4) {
+    margin-left: 48px;
+  }
+
+  li:nth-child(n + 5) {
+    margin-left: 42.5px;
+  }
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  width: 128px;
+  color: $color-text-muted;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.tile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 128px;
+  height: 128px;
+  border-radius: 10px;
+  background: $color-surface;
+  box-shadow: $shadow-tile;
+}
+
+.active {
+  color: $color-highlight;
+  font-weight: 600;
+
+  .tile {
+    background: $color-white;
+  }
+}
+
+@include below($breakpoint-desktop) {
+  .list {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+    padding-left: 0;
+
+    li:nth-child(n) {
+      margin-left: 0;
+    }
+  }
+}
